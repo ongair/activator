@@ -12,7 +12,8 @@
     $username = $app->request->params('phone_number');
     $name = $app->request->params('nickname');
     $mode = $app->request->params('mode');
-
+    $retry_after = 1805;
+    
     if ($mode == null || $mode == '')
       $mode = 'sms';
 
@@ -27,6 +28,8 @@
       
       // request a code
       $response = $w->codeRequest(trim($mode));
+      $message = 'Code requested';
+      $retry_after = $response->retry_after;
     }
     catch(Exception $ex) {
       $message = $ex->getMessage();
