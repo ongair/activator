@@ -20,6 +20,7 @@
     $message = '';
     $success = true;
     $error = false;
+    $rsp = array();
 
     try {
       // create the client
@@ -27,8 +28,16 @@
       
       // request a code
       $response = $w->codeRequest($mode);
-      $message = 'Code requested';
-      $retry_after = $response->retry_after;
+      $message = 'Code requested';            
+
+      $rsp = array(
+        'retry_after' => $response->retry_after,
+        'method' => $response->method,
+        'reason' => $response->reason,
+        'param' => $response->param,
+        'status' => $response->status,
+        'length' => $response->length
+      );
     }
     catch(Exception $ex) {
       $message = $ex->getMessage();
@@ -37,7 +46,8 @@
 
     $app->render(200, array(
       'success' => $success,
-      'message' => $message
+      'message' => $message,
+      'response' => $rsp
     ));
 
   });
