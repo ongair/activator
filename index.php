@@ -19,7 +19,6 @@
     // handler for the message
     $message = '';
     $success = true;
-    $error = false;
     $rsp = array();
 
     try {
@@ -33,8 +32,8 @@
       $rsp = array(
         'retry_after' => $response->retry_after,
         'method' => $response->method,
-        'reason' => $response->reason,
-        'param' => $response->param,
+        'reason' => isset($response->reason) ? $response->reason : "",
+        'param' => isset($response->param) ? $response->param : "",
         'status' => $response->status,
         'length' => $response->length
       );
@@ -50,6 +49,37 @@
       'response' => $rsp
     ));
 
+  });
+
+  // Register a code
+  $app->post('/register', function() use ($app) {
+    $username = $app->request->params('phone_number');
+    $code = $app->request->params('code');
+    
+    $success = true;
+    $rsp = array();
+
+    try {
+      // create the client
+      $w = new Registration($username, false);
+
+      $response = $w->codeRegister($code);
+
+      $rsp = array(
+        'password' => $response->pw
+      );
+
+    }
+    catch (Exception $ex) {
+      $success = false;
+      $message = $ex->getMessage();
+    }
+
+    $app->render(200, array(
+      'success' => $success,
+      'message' => $message,
+      'response' => $rsp
+    ));
   });
 
   $app->get('/status', function() use ($app) {
