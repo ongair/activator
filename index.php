@@ -40,4 +40,10 @@
 
   });
 
+  $app->get('/status', function() use ($app) {
+    $app->render(200, array(
+      'success' => true
+    ));
+  });
+
   $app->run();
