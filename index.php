@@ -13,7 +13,7 @@
     $name = $app->request->params('nickname');
     $mode = $app->request->params('mode');
     $retry_after = 1805;
-    
+
     if ($mode == null || $mode == '')
       $mode = 'sms';
 
@@ -24,7 +24,7 @@
 
     try {
       // create the client
-      $w = new WhatsProt($username, $nickname, false);
+      $w = new WhatsProt($username, $name, false);
       
       // request a code
       $response = $w->codeRequest(trim($mode));
