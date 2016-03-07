@@ -10,7 +10,6 @@
   $app->post('/request', function() use ($app) {
     
     $username = $app->request->params('phone_number');
-    $name = $app->request->params('nickname');
     $mode = $app->request->params('mode');
     $retry_after = 1805;
 
@@ -24,10 +23,10 @@
 
     try {
       // create the client
-      $w = new WhatsProt($username, $name, false);
+      $w = new Registration($username, false);
       
       // request a code
-      $response = $w->codeRequest(trim($mode));
+      $response = $w->codeRequest($mode);
       $message = 'Code requested';
       $retry_after = $response->retry_after;
     }
