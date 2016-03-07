@@ -1,0 +1,9 @@
+*.dat
+*.DS_Store
+tmp/*
+.env
+composer.phar
+vendor/
+log/*.log
+services/
+scheduler.sh
