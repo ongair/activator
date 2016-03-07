@@ -57,6 +57,7 @@
     $code = $app->request->params('code');
     
     $success = true;
+    $message = '';
     $rsp = array();
 
     try {
@@ -64,7 +65,7 @@
       $w = new Registration($username, false);
 
       $response = $w->codeRegister($code);
-
+      $message = 'Code activated';
       $rsp = array(
         'password' => $response->pw
       );
