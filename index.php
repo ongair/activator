@@ -1,10 +1,28 @@
 <?php
 
-  require 'vendor/autoload.php';
+  require 'vendor/autoload.php';  
+  require_once 'token_generator.php';
 
   $app = new \Slim\Slim();
   $app->view(new \JsonApiView());
   $app->add(new \JsonApiMiddleware());
+
+  // Request the token and identity for calling
+  $app->get('/token', function() use ($app) {
+
+    $platform = 'Android';
+    $phone_number = $app->request->params('phone_number');
+
+    $generator = new TokenGenerator($phone_number);
+    $identity = $generator->getIdentity();
+    $token = $generator->getToken();
+
+    $app->render(200, array(
+      'success' => true,
+      'identity' => urlencode($identity),
+      'token' => $token
+    ));
+  });
 
   // Request a code
   $app->post('/request', function() use ($app) {
