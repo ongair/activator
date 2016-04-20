@@ -19,6 +19,6 @@
 
     public function getToken() {
       $code = $this->phone['cc'];
-      return generateRequestToken($code, $this->number, 'Android');
+      return generateRequestToken($code, $this->phone['phone'], 'Android');
     }
   }
