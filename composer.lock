@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3294d35106d4f5c2491f4d9744d3ab59",
-    "content-hash": "457153d60c78e053463cbd971438060f",
+    "hash": "89bcc347e8f3cb11cb76c88a938b6e45",
+    "content-hash": "d850bf8c1794cca8bf5b84ea1d526fa7",
     "packages": [
         {
             "name": "entomb/slim-json-api",
@@ -99,16 +99,16 @@
         },
         {
             "name": "whatsapp/chat-api",
-            "version": "v3.2",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mgp25/Chat-API.git",
-                "reference": "7a7619a8ab2bee61f800c8f3dee9d05110061f90"
+                "reference": "e3f994059ab466fee6732e99b826de4733c3e9b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mgp25/Chat-API/zipball/7a7619a8ab2bee61f800c8f3dee9d05110061f90",
-                "reference": "7a7619a8ab2bee61f800c8f3dee9d05110061f90",
+                "url": "https://api.github.com/repos/mgp25/Chat-API/zipball/e3f994059ab466fee6732e99b826de4733c3e9b5",
+                "reference": "e3f994059ab466fee6732e99b826de4733c3e9b5",
                 "shasum": ""
             },
             "require": {
@@ -134,7 +134,7 @@
             "authors": [
                 {
                     "name": "Chat API Contributing Team",
-                    "homepage": "https://github.com/WHAnonymous/Chat-API/graphs/contributors",
+                    "homepage": "https://github.com/mgp25/Chat-API/graphs/contributors",
                     "role": "Contributors"
                 }
             ],
@@ -144,13 +144,14 @@
                 "whatsapi",
                 "whatsapp"
             ],
-            "time": "2016-02-19 19:11:36"
+            "time": "2016-04-21 07:29:29"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "whatsapp/chat-api": 20,
         "entomb/slim-json-api": 20
     },
     "prefer-stable": false,

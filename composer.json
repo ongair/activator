@@ -1,6 +1,6 @@
 {
     "require": {
-        "whatsapp/chat-api": "^3.2",
+        "whatsapp/chat-api": "dev-master",
         "slim/slim": "2.3.*",
         "entomb/slim-json-api": "dev-master"
     }
