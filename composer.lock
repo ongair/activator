@@ -103,12 +103,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mgp25/Chat-API.git",
-                "reference": "e3f994059ab466fee6732e99b826de4733c3e9b5"
+                "reference": "c72cad156c9d9ce7953439c089474a7a7320906d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mgp25/Chat-API/zipball/e3f994059ab466fee6732e99b826de4733c3e9b5",
-                "reference": "e3f994059ab466fee6732e99b826de4733c3e9b5",
+                "url": "https://api.github.com/repos/mgp25/Chat-API/zipball/c72cad156c9d9ce7953439c089474a7a7320906d",
+                "reference": "c72cad156c9d9ce7953439c089474a7a7320906d",
                 "shasum": ""
             },
             "require": {
@@ -144,7 +144,7 @@
                 "whatsapi",
                 "whatsapp"
             ],
-            "time": "2016-04-21 07:29:29"
+            "time": "2016-07-02 12:03:26"
         }
     ],
     "packages-dev": [],
